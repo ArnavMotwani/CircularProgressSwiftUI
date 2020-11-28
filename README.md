@@ -8,7 +8,7 @@ In Xcode go to `File -> Swift Packages -> Add Package Dependency` and paste in t
 
 ## Usage:
 
-Import the package in the file you would like to use it: `import CircularProgress`
+Import the package into the file with  `import CircularProgress`
 
 ### Example:
 
