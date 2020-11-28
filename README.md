@@ -2,7 +2,7 @@
 
 SwiftUI package that creates an animated circular progress bar
 
-### Installation: It requires iOS 14 and Xcode 12!
+### Installation: It requires at least iOS 13, iPadOS 13, macOS 10.15  and Xcode 11!
 
 In Xcode go to `File -> Swift Packages -> Add Package Dependency` and paste in the repo's url: `https://github.com/ArnavMotwani/CircularProgressSwftUI` and select master branch.
 
@@ -10,25 +10,37 @@ In Xcode go to `File -> Swift Packages -> Add Package Dependency` and paste in t
 
 Import the package in the file you would like to use it: `import CircularProgress`
 
+### Example:
+
+<p float="center">
+  <img src="./Gifs/example.gif" width="300" />
+</p>
+
 ```swift
+import SwiftUI
+import CircularProgress
+
 struct ContentView: View {
-    @State var count: Int = 0
-    
+    @State var count = 0
+    let total = 10
     var progress: CGFloat{
-        let count = value
-        let total = 10
-        
         return CGFloat(count)/CGFloat(total)
     }
-    
     var body: some View {
-        ZStack{
-        CircularProgress(count: count, total: 10, progress: progress)
+        VStack {
+            CircularProgressView(count: count, total: total, progress: progress)
+                .padding(50)
+            HStack{
+                Button("Decrease", action: {self.count -= 1})
+                Spacer()
+                Button("Increase", action: {self.count += 1})
+            }
+            .padding(50)
         }
     }
 }
+
 ```
-### Example:
 
 ## Customizations:
 
