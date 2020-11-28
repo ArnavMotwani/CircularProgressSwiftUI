@@ -3,10 +3,8 @@ import XCTest
 
 final class CircularProgressTests: XCTestCase {
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(CircularProgress().text, "Hello, World!")
+        let item = CircularProgressView(count: 5, total: 10, progress: 0.5)
+        XCTAssertEqual(item.progress, 0.5)
     }
 
     static var allTests = [
