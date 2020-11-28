@@ -13,7 +13,7 @@ Import the package in the file you would like to use it: `import CircularProgres
 ### Example:
 
 <p float="center">
-  <img src="./Gifs/example.gif" width="300" />
+  <img src="./Gifs/example.gif" width="100" />
 </p>
 
 ```swift
