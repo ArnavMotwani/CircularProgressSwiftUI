@@ -3,19 +3,28 @@ import SwiftUI
 @available(iOS 13, OSX 10.15, *)
 public struct CircularProgressView: View {
     
+    //MARK: Required variables
     var count: Int
     var total: Int
     var progress: CGFloat
 
+    //MARK: Optional variables
+    //fontOne for the current value text and fontTwo for the total value text in the centre.
     var fontOne: Font
     var fontTwo: Font
 
+    //colorOne for the current value text and colorTwo for the total value text in the centre.
     var colorOne: Color
     var colorTwo: Color
 
+    //The fill variable is used to choose the gradient inside the progress bar
     var fill: LinearGradient
+    //The lineWidth variable is used to choose the width of the progress bar (Not the enter view)
     var lineWidth: CGFloat
 
+    //MARK: Init
+    //Declared to allow view access the package
+    //Also sets defaults for optional variables
     public init(count: Int,
                 total: Int,
                 progress: CGFloat,
@@ -37,23 +46,30 @@ public struct CircularProgressView: View {
         self.lineWidth = lineWidth
     }
     
+    //MARK: View
     public var body: some View {
         ZStack{
+            //Background line for progress
             Circle()
                 .stroke(lineWidth: lineWidth)
                 .opacity(0.3)
                 .foregroundColor(Color.secondary)
             
+            //Trimmed circle to represent progress
             Circle()
                 .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
                 .stroke(fill ,style: StrokeStyle(lineWidth: lineWidth, lineCap: .round, lineJoin: .round))
                 .rotationEffect(Angle(degrees: 270.0))
                 .animation(.linear, value: progress)
-
+            
+            //Text at the centre
             VStack {
+                //Text for current value
                 Text("\(count)")
                     .font(fontOne)
                     .foregroundColor(colorOne)
+                
+                //Text for total value
                 Text("/ \(total)")
                     .font(fontTwo)
                     .foregroundColor(colorTwo)
