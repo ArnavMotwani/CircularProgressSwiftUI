@@ -21,6 +21,12 @@ public struct CircularProgressView: View {
     var fill: LinearGradient
     //The lineWidth variable is used to choose the width of the progress bar (Not the enter view)
     var lineWidth: CGFloat
+    //The lineCap variable is used to choose the line caps at the end of the progress bar
+    var lineCap: CGLineCap
+    //The lineJoin variable is used to choose how the progress bar joins itself when progress is complete
+    var lineJoin: CGLineJoin
+    //Choose whether the text in the centre is shown.
+    var showText: Bool
 
     //MARK: Init
     //Declared to allow view access the package
@@ -33,7 +39,10 @@ public struct CircularProgressView: View {
                 colorOne: Color = Color.primary,
                 colorTwo: Color = Color.gray,
                 fill: LinearGradient = LinearGradient(gradient: Gradient(colors: [Color.green, Color.blue]), startPoint: .top, endPoint: .bottom),
-                lineWidth: CGFloat = 25.0) {
+                lineWidth: CGFloat = 25.0,
+                lineCap: CGLineCap = CGLineCap.round,
+                lineJoin: CGLineJoin = CGLineJoin.round,
+                showText: Bool = true) {
 
         self.count = count
         self.total = total
@@ -44,6 +53,9 @@ public struct CircularProgressView: View {
         self.colorTwo = colorTwo
         self.fill = fill
         self.lineWidth = lineWidth
+        self.lineCap = lineCap
+        self.lineJoin = lineJoin
+        self.showText = showText
     }
     
     //MARK: View
@@ -58,21 +70,23 @@ public struct CircularProgressView: View {
             //Trimmed circle to represent progress
             Circle()
                 .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
-                .stroke(fill ,style: StrokeStyle(lineWidth: lineWidth, lineCap: .round, lineJoin: .round))
+                .stroke(fill ,style: StrokeStyle(lineWidth: lineWidth, lineCap: lineCap, lineJoin: lineJoin))
                 .rotationEffect(Angle(degrees: 270.0))
                 .animation(.linear, value: progress)
             
-            //Text at the centre
-            VStack {
-                //Text for current value
-                Text("\(count)")
-                    .font(fontOne)
-                    .foregroundColor(colorOne)
-                
-                //Text for total value
-                Text("/ \(total)")
-                    .font(fontTwo)
-                    .foregroundColor(colorTwo)
+            if showText {
+                //Text at the centre
+                VStack {
+                    //Text for current value
+                    Text("\(count)")
+                        .font(fontOne)
+                        .foregroundColor(colorOne)
+                    
+                    //Text for total value
+                    Text("/ \(total)")
+                        .font(fontTwo)
+                        .foregroundColor(colorTwo)
+                }
             }
         }
     }
