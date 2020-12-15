@@ -45,17 +45,16 @@ struct ContentView: View {
 
 ## Customizations:
 
-| parameter | optional? | type              | description                                                   | default                                                                                                    |
-|-----------|-----------|-------------------|---------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
-| count     | required  | Int               | Current value (larger text in the centre)                     | -                                                                                                          |
-| total     | required  | Int               | Total value (smaller text in the centre)                      | -                                                                                                          |
-| progress  | required  | CGFloat           | Progress of the bar                                           | -                                                                                                          |
-| fontOne   | optional  | Font              | Font of larger text in the centre                             | Font.system(size: 75, weight: .bold, design: .rounded)                                                     |
-| fontTwo   | optional  | Font              | Font of smaller text in the centre                            | Font.system(size: 25, weight: .bold, design: .rounded)                                                     |
-| colorOne  | optional  | Color             | Color of larger text in the centre                            | Color.primary                                                                                              |
-| colorTwo  | optional  | Color             | Color of smaller text in the centre                           | Color.gray                                                                                                 |
-| fill      | optional  | Color or Gradient | Fill of the progress bar                                      | LinearGradient(gradient: Gradient(colors: [Color.green, Color.blue]), startPoint: .top, endPoint: .bottom) |
-| lineWidth | optional  | CGFloat           | Width of the progress bar                                     | 25.0                                                                                                       |
-| lineCap   | optional  | CGLineCap         | The line cap at the end of the progress bar                   | CGLineCap.round                                                                                            |
-| lineJoin  | optional  | CGLineJoin        | How the progress bar connects to itself when progress is 100% | CGLineJoin.round                                                                                           |
-| showText  | optional  | Bool              | Choosing whether the text at the centre is displayed or not   | true                                                                                                       |
+| parameter | optional? | type              | description                                                 | default                                                                                                    |
+|-----------|-----------|-------------------|-------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| count     | required  | Int               | Current value (larger text in the centre)                   | -                                                                                                          |
+| total     | required  | Int               | Total value (smaller text in the centre)                    | -                                                                                                          |
+| progress  | required  | CGFloat           | Progress of the bar                                         | -                                                                                                          |
+| fontOne   | optional  | Font              | Font of larger text in the centre                           | Font.system(size: 75, weight: .bold, design: .rounded)                                                     |
+| fontTwo   | optional  | Font              | Font of smaller text in the centre                          | Font.system(size: 25, weight: .bold, design: .rounded)                                                     |
+| colorOne  | optional  | Color             | Color of larger text in the centre                          | Color.primary                                                                                              |
+| colorTwo  | optional  | Color             | Color of smaller text in the centre                         | Color.gray                                                                                                 |
+| fill      | optional  | Color or Gradient | Fill of the progress bar                                    | LinearGradient(gradient: Gradient(colors: [Color.green, Color.blue]), startPoint: .top, endPoint: .bottom) |
+| lineWidth | optional  | CGFloat           | Width of the progress bar                                   | 25.0                                                                                                       |
+| lineCap   | optional  | CGLineCap         | The line cap at the end of the progress bar                 | CGLineCap.round                                                                                            |
+| showText  | optional  | Bool              | Choosing whether the text at the centre is displayed or not | true                                                                                                       |
