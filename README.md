@@ -61,6 +61,7 @@ struct ContentView: View {
 | showBottomText | optional  | Bool              | Choose whether the bottom text in the centre is visible (if showText is true) | true                                                                                                       |
 ### Examples
 
+#### fontOne
 <p float="center">
   <img src="./Images/FontOne.png" />
 </p>
@@ -68,6 +69,8 @@ struct ContentView: View {
 ```swift
 CircularProgressView(count: count, total: total, progress: progress, fontOne: Font.title.bold())
 ```
+---
+#### fontTwo
 <p float="center">
   <img src="./Images/FontTwo.png" />
 </p>
@@ -75,6 +78,8 @@ CircularProgressView(count: count, total: total, progress: progress, fontOne: Fo
 ```swift
 CircularProgressView(count: count, total: total, progress: progress, fontTwo: Font.title2)
 ```
+---
+#### colorOne
 <p float="center">
   <img src="./Images/ColorOne.png" />
 </p>
@@ -82,6 +87,8 @@ CircularProgressView(count: count, total: total, progress: progress, fontTwo: Fo
 ```swift
 CircularProgressView(count: count, total: total, progress: progress, colorOne: Color.blue)
 ```
+---
+#### colorTwo
 <p float="center">
   <img src="./Images/ColorTwo.png" />
 </p>
@@ -89,6 +96,8 @@ CircularProgressView(count: count, total: total, progress: progress, colorOne: C
 ```swift
 CircularProgressView(count: count, total: total, progress: progress, colorTwo: Color.blue)
 ```
+---
+#### fill
 <p float="center">
   <img src="./Images/Fill.png" />
 </p>
@@ -96,6 +105,8 @@ CircularProgressView(count: count, total: total, progress: progress, colorTwo: C
 ```swift
 CircularProgressView(count: count, total: total, progress: progress, fill: LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .leading, endPoint: .trailing))
 ```
+---
+#### lineWidth
 <p float="center">
   <img src="./Images/LineWidth.png" />
 </p>
@@ -103,6 +114,8 @@ CircularProgressView(count: count, total: total, progress: progress, fill: Linea
 ```swift
 CircularProgressView(count: count, total: total, progress: progress, lineWidth: 50)
 ```
+---
+#### lineCap
 <p float="center">
   <img src="./Images/LineCap.png" />
 </p>
@@ -110,7 +123,8 @@ CircularProgressView(count: count, total: total, progress: progress, lineWidth: 
 ```swift
 CircularProgressView(count: count, total: total, progress: progress, lineCap: CGLineCap.square)
 ```
-
+---
+#### showText
 <p float="center">
   <img src="./Images/ShowText.png" />
 </p>
@@ -118,7 +132,8 @@ CircularProgressView(count: count, total: total, progress: progress, lineCap: CG
 ```swift
 CircularProgressView(count: count, total: total, progress: progress, showText: false)
 ```
-
+---
+#### showBottomText
 <p float="center">
   <img src="./Images/ShowBottomText.png" />
 </p>
