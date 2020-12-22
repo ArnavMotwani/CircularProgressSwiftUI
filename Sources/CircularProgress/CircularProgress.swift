@@ -25,6 +25,8 @@ public struct CircularProgressView: View {
     var lineCap: CGLineCap
     //Choose whether the text in the centre is shown.
     var showText: Bool
+    //Choose whether the bottom text in the centre of the progress bar is shown.
+    var showBottomText: Bool
 
     //MARK: Init
     //Declared to allow view access the package
@@ -39,7 +41,8 @@ public struct CircularProgressView: View {
                 fill: LinearGradient = LinearGradient(gradient: Gradient(colors: [Color.green, Color.blue]), startPoint: .top, endPoint: .bottom),
                 lineWidth: CGFloat = 25.0,
                 lineCap: CGLineCap = CGLineCap.round,
-                showText: Bool = true) {
+                showText: Bool = true,
+                showBottomText: Bool = true) {
 
         self.count = count
         self.total = total
@@ -52,6 +55,7 @@ public struct CircularProgressView: View {
         self.lineWidth = lineWidth
         self.lineCap = lineCap
         self.showText = showText
+        self.showBottomText = showBottomText
     }
     
     //MARK: View
@@ -77,11 +81,12 @@ public struct CircularProgressView: View {
                     Text("\(count)")
                         .font(fontOne)
                         .foregroundColor(colorOne)
-                    
-                    //Text for total value
-                    Text("/ \(total)")
-                        .font(fontTwo)
-                        .foregroundColor(colorTwo)
+                    if showBottomText{
+                        //Text for total value
+                        Text("/ \(total)")
+                            .font(fontTwo)
+                            .foregroundColor(colorTwo)
+                    }
                 }
             }
         }
