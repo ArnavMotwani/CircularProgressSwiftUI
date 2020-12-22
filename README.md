@@ -66,196 +66,49 @@ struct ContentView: View {
 </p>
 
 ```swift
-import SwiftUI
-import CircularProgress
-
-struct ContentView: View {
-    @State var count = 5
-    let total = 10
-    var progress: CGFloat{
-        return CGFloat(count)/CGFloat(total)
-    }
-    var body: some View {
-        VStack {
-            CircularProgressView(count: count, total: total, progress: progress, fontOne: Font.title.bold())
-                .padding(50)
-            HStack{
-                Button("Decrease", action: {self.count -= 1})
-                Spacer()
-                Button("Increase", action: {self.count += 1})
-            }
-            .padding(50)
-        }
-    }
-}
+CircularProgressView(count: count, total: total, progress: progress, fontOne: Font.title.bold())
 ```
 <p float="center">
   <img src="./Images/FontTwo.png" />
 </p>
 
 ```swift
-import SwiftUI
-import CircularProgress
-
-struct ContentView: View {
-    @State var count = 5
-    let total = 10
-    var progress: CGFloat{
-        return CGFloat(count)/CGFloat(total)
-    }
-    var body: some View {
-        VStack {
-            CircularProgressView(count: count, total: total, progress: progress, fontTwo: Font.title2)
-                .padding(50)
-            HStack{
-                Button("Decrease", action: {self.count -= 1})
-                Spacer()
-                Button("Increase", action: {self.count += 1})
-            }
-            .padding(50)
-        }
-    }
-}
+CircularProgressView(count: count, total: total, progress: progress, fontTwo: Font.title2)
 ```
 <p float="center">
   <img src="./Images/ColorOne.png" />
 </p>
 
 ```swift
-import SwiftUI
-import CircularProgress
-
-struct ContentView: View {
-    @State var count = 5
-    let total = 10
-    var progress: CGFloat{
-        return CGFloat(count)/CGFloat(total)
-    }
-    var body: some View {
-        VStack {
-            CircularProgressView(count: count, total: total, progress: progress, colorOne: Color.blue)
-                .padding(50)
-            HStack{
-                Button("Decrease", action: {self.count -= 1})
-                Spacer()
-                Button("Increase", action: {self.count += 1})
-            }
-            .padding(50)
-        }
-    }
-}
+CircularProgressView(count: count, total: total, progress: progress, colorOne: Color.blue)
 ```
 <p float="center">
   <img src="./Images/ColorTwo.png" />
 </p>
 
 ```swift
-import SwiftUI
-import CircularProgress
-
-struct ContentView: View {
-    @State var count = 5
-    let total = 10
-    var progress: CGFloat{
-        return CGFloat(count)/CGFloat(total)
-    }
-    var body: some View {
-        VStack {
-            CircularProgressView(count: count, total: total, progress: progress, colorTwo: Color.blue)
-                .padding(50)
-            HStack{
-                Button("Decrease", action: {self.count -= 1})
-                Spacer()
-                Button("Increase", action: {self.count += 1})
-            }
-            .padding(50)
-        }
-    }
-}
+CircularProgressView(count: count, total: total, progress: progress, colorTwo: Color.blue)
 ```
 <p float="center">
   <img src="./Images/Fill.png" />
 </p>
 
 ```swift
-import SwiftUI
-import CircularProgress
-
-struct ContentView: View {
-    @State var count = 5
-    let total = 10
-    var progress: CGFloat{
-        return CGFloat(count)/CGFloat(total)
-    }
-    var body: some View {
-        VStack {
-            CircularProgressView(count: count, total: total, progress: progress, fill: LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .leading, endPoint: .trailing))
-                .padding(50)
-            HStack{
-                Button("Decrease", action: {self.count -= 1})
-                Spacer()
-                Button("Increase", action: {self.count += 1})
-            }
-            .padding(50)
-        }
-    }
-}
+CircularProgressView(count: count, total: total, progress: progress, fill: LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .leading, endPoint: .trailing))
 ```
 <p float="center">
   <img src="./Images/LineWidth.png" />
 </p>
 
 ```swift
-import SwiftUI
-import CircularProgress
-
-struct ContentView: View {
-    @State var count = 5
-    let total = 10
-    var progress: CGFloat{
-        return CGFloat(count)/CGFloat(total)
-    }
-    var body: some View {
-        VStack {
-            CircularProgressView(count: count, total: total, progress: progress, lineWidth: 50)
-                .padding(50)
-            HStack{
-                Button("Decrease", action: {self.count -= 1})
-                Spacer()
-                Button("Increase", action: {self.count += 1})
-            }
-            .padding(50)
-        }
-    }
-}
+CircularProgressView(count: count, total: total, progress: progress, lineWidth: 50)
 ```
 <p float="center">
   <img src="./Images/LineCap.png" />
 </p>
 
 ```swift
-import SwiftUI
-import CircularProgress
-
-struct ContentView: View {
-    @State var count = 5
-    let total = 10
-    var progress: CGFloat{
-        return CGFloat(count)/CGFloat(total)
-    }
-    var body: some View {
-        VStack {
-            CircularProgressView(count: count, total: total, progress: progress, lineCap: CGLineCap.square)
-                .padding(50)
-            HStack{
-                Button("Decrease", action: {self.count -= 1})
-                Spacer()
-                Button("Increase", action: {self.count += 1})
-            }
-            .padding(50)
-        }
-    }
-}
+CircularProgressView(count: count, total: total, progress: progress, lineCap: CGLineCap.square)
 ```
 
 <p float="center">
@@ -263,28 +116,7 @@ struct ContentView: View {
 </p>
 
 ```swift
-import SwiftUI
-import CircularProgress
-
-struct ContentView: View {
-    @State var count = 5
-    let total = 10
-    var progress: CGFloat{
-        return CGFloat(count)/CGFloat(total)
-    }
-    var body: some View {
-        VStack {
-            CircularProgressView(count: count, total: total, progress: progress, showText: false)
-                .padding(50)
-            HStack{
-                Button("Decrease", action: {self.count -= 1})
-                Spacer()
-                Button("Increase", action: {self.count += 1})
-            }
-            .padding(50)
-        }
-    }
-}
+CircularProgressView(count: count, total: total, progress: progress, showText: false)
 ```
 
 <p float="center">
@@ -292,27 +124,7 @@ struct ContentView: View {
 </p>
 
 ```swift
-import SwiftUI
-import CircularProgress
-
-struct ContentView: View {
-    @State var count = 5
-    let total = 10
-    var progress: CGFloat{
-        return CGFloat(count)/CGFloat(total)
-    }
-    var body: some View {
-        VStack {
-            CircularProgressView(count: count, total: total, progress: progress, showBottomText: false)
-                .padding(50)
-            HStack{
-                Button("Decrease", action: {self.count -= 1})
-                Spacer()
-                Button("Increase", action: {self.count += 1})
-            }
-            .padding(50)
-        }
-    }
+CircularProgressView(count: count, total: total, progress: progress, showBottomText: false)
 }
 ```
 
