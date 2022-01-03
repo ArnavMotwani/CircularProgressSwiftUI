@@ -1,6 +1,6 @@
 import SwiftUI
 
-@available(iOS 13, OSX 10.15, *)
+@available(iOS 15, macOS 12.0, *)
 public struct CircularProgressView: View {
     
     //MARK: Required variables
@@ -18,7 +18,7 @@ public struct CircularProgressView: View {
     var colorTwo: Color
 
     //The fill variable is used to choose the gradient inside the progress bar
-    var fill: LinearGradient
+    var fill: AnyShapeStyle
     //The lineWidth variable is used to choose the width of the progress bar (Not the enter view)
     var lineWidth: CGFloat
     //The lineCap variable is used to choose the line caps at the end of the progress bar
@@ -51,7 +51,34 @@ public struct CircularProgressView: View {
         self.fontTwo = fontTwo
         self.colorOne = colorOne
         self.colorTwo = colorTwo
-        self.fill = fill
+        self.fill = AnyShapeStyle(fill)
+        self.lineWidth = lineWidth
+        self.lineCap = lineCap
+        self.showText = showText
+        self.showBottomText = showBottomText
+    }
+    
+    public init(count: Int,
+                total: Int,
+                progress: CGFloat,
+                fontOne: Font = Font.system(size: 75, weight: .bold, design: .rounded),
+                fontTwo: Font = Font.system(size: 25, weight: .bold, design: .rounded),
+                colorOne: Color = Color.primary,
+                colorTwo: Color = Color.gray,
+                fill: AngularGradient,
+                lineWidth: CGFloat = 25.0,
+                lineCap: CGLineCap = CGLineCap.round,
+                showText: Bool = true,
+                showBottomText: Bool = true) {
+
+        self.count = count
+        self.total = total
+        self.progress = progress
+        self.fontOne = fontOne
+        self.fontTwo = fontTwo
+        self.colorOne = colorOne
+        self.colorTwo = colorTwo
+        self.fill = AnyShapeStyle(fill)
         self.lineWidth = lineWidth
         self.lineCap = lineCap
         self.showText = showText
