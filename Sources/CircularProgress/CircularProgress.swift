@@ -1,3 +1,4 @@
+#if canImport(SwiftUI) && (!os(iOS) || arch(arm64))
 import SwiftUI
 
 @available(iOS 15, macOS 12.0, *)
@@ -119,4 +120,4 @@ public struct CircularProgressView: View {
         }
     }
 }
-
+#endif

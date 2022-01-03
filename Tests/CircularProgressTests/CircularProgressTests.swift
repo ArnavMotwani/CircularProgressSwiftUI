@@ -1,3 +1,4 @@
+#if canImport(SwiftUI) && (!os(iOS) || arch(arm64))
 import XCTest
 import SwiftUI
 @testable import CircularProgress
@@ -18,3 +19,4 @@ final class CircularProgressTests: XCTestCase {
         ("testAngular", testAngular)
     ]
 }
+#endif
