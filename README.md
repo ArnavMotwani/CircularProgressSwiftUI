@@ -4,7 +4,11 @@ SwiftUI package that creates an animated circular progress bar
 
 ### Installation: It requires at least iOS 15, iPadOS 15, macOS 12 and Xcode 13!
 
-In Xcode go to `File -> Swift Packages -> Add Package Dependency` and paste in the repo's url: `https://github.com/ArnavMotwani/CircularProgressSwiftUI.git` then either select a version or the main branch (I will update the main branch more frequently with minor changes, while the version will only increase with significant changes)
+In Xcode go to `File -> Add Packages...` and paste in the repo's url: `https://github.com/ArnavMotwani/CircularProgressSwiftUI.git` then either select a version or the main branch
+
+I will update the main branch more frequently with minor changes, while the version will only increase with significant changes.
+
+There also a branch called iOS13 which supports iOS 13+ and macOS 10_15+
 
 ## Usage:
 
