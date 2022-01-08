@@ -1,6 +1,5 @@
 import SwiftUI
 
-@available(iOS 13, OSX 10.15, *)
 public struct CircularProgressView: View {
     
     //MARK: Required variables
